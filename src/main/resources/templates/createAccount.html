@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account - Your Money, Your Rules!</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #c0e1f7; margin: 0; padding: 0;">
+
+<div class="create-account-container" style="text-align: center; padding: 50px; background-color: #ffffff; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); margin: 100px auto; max-width: 600px; border-radius: 10px;">
+
+    <h1>Create Account - Your Money, Your Rules!</h1>
+
+    <form th:action="@{/api/account/createAccount}" method="post" th:object="${account}" style="margin-top: 30px;">
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="name" style="display: block; font-size: 16px; font-weight: bold; margin-bottom: 5px;">Name (Because you're unique!):</label>
+            <input type="text" th:field="*{name}" id="name" required style="width: 100%; padding: 10px; border: 1px solid #dddddd; border-radius: 5px; font-size: 16px;">
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red;"></span>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="phone" style="display: block; font-size: 16px; font-weight: bold; margin-bottom: 5px;">Phone (Your hotline to cash!):</label>
+            <input type="text" th:field="*{phone}" id="phone" required style="width: 100%; padding: 10px; border: 1px solid #dddddd; border-radius: 5px; font-size: 16px;">
+            <span th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}" style="color: red;"></span>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="dob" style="display: block; font-size: 16px; font-weight: bold; margin-bottom: 5px;">Date of Birth (Birthdays are meant to be celebrated!):</label>
+            <input type="date" th:field="*{dob}" id="dob" required style="width: 100%; padding: 10px; border: 1px solid #dddddd; border-radius: 5px; font-size: 16px;">
+            <span th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}" style="color: red;"></span>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="address" style="display: block; font-size: 16px; font-weight: bold; margin-bottom: 5px;">Address (Your financial kingdom!):</label>
+            <input type="text" th:field="*{address}" id="address" required style="width: 100%; padding: 10px; border: 1px solid #dddddd; border-radius: 5px; font-size: 16px;">
+            <span th:if="${#fields.hasErrors('address')}" th:errors="*{address}" style="color: red;"></span>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="aadharcard" style="display: block; font-size: 16px; font-weight: bold; margin-bottom: 5px;">Aadhar Card (Your money ID!):</label>
+            <input type="text" th:field="*{aadharcard}" id="aadharcard" required style="width: 100%; padding: 10px; border: 1px solid #dddddd; border-radius: 5px; font-size: 16px;">
+            <span th:if="${#fields.hasErrors('aadharcard')}" th:errors="*{aadharcard}" style="color: red;"></span>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="balance" style="display: block; font-size: 16px; font-weight: bold; margin-bottom: 5px;">Balance (The more, the merrier!):</label>
+            <input type="number" th:field="*{balance}" id="balance" required style="width: 100%; padding: 10px; border: 1px solid #dddddd; border-radius: 5px; font-size: 16px;">
+            <span th:if="${#fields.hasErrors('balance')}" th:errors="*{balance}" style="color: red;"></span>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="username" style="display: block; font-size: 16px; font-weight: bold; margin-bottom: 5px;">Username (Your financial alter ego!):</label>
+            <input type="text" th:field="*{username}" id="username" required style="width: 100%; padding: 10px; border: 1px solid #dddddd; border-radius: 5px; font-size: 16px;">
+            <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}" style="color: red;"></span>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 20px;">
+            <label for="password" style="display: block; font-size: 16px; font-weight: bold; margin-bottom: 5px;">Password (Guard it like a treasure!):</label>
+            <input type="password" th:field="*{password}" id="password" required style="width: 100%; padding: 10px; border: 1px solid #dddddd; border-radius: 5px; font-size: 16px;">
+            <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style="color: red;"></span>
+        </div>
+
+        <button type="submit" style="display: inline-block; padding: 12px 30px; background-color: #c0e1f7; color: #000; text-decoration: none; border-radius: 5px; font-size: 16px;">Create</button>
+    </form>
+
+    <div style="margin-top: 30px; font-size: 20px;  color: #000;">
+        <p><em>Your financial adventure begins here! Dive into the world of wealth and make money moves with style.</em></p>
+    </div>
+
+</div>
+</body>
+</html>

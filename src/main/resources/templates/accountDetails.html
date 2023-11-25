@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Account Details</title>
+  <!-- Add your CSS styles here -->
+</head>
+<body>
+<h1>Account Details</h1>
+
+<!-- Create a form to input the account number -->
+<form th:action="@{/api/account/accnumber}" method="get">
+  <label for="accountNumber">Enter Account Number:</label>
+  <input type="text" id="accountNumber" name="accnumber" required>
+  <button type="submit">Fetch Account Details</button>
+</form>
+
+<!-- Display the account details if available -->
+<div th:if="${account}">
+  <p>Account Name: <span th:text="${account.name}"></span></p>
+  <p>Balance: <span th:text="${account.balance}"></span></p>
+  <!-- Add more account details as needed -->
+</div>
+
+<!-- Add any additional content or styling here -->
+</body>
+</html>
+
+

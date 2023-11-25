@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to SpendWise</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            background-color: #87CEEB; /* Light blue background */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background-color: #ffffff; /* White card background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            animation: cardFadeIn 1s ease;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        @keyframes cardFadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .app-logo {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #87CEEB; /* Light blue heading */
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            animation: textColorChange 4s alternate infinite;
+        }
+
+        @keyframes textColorChange {
+            0% {
+                color: #87CEEB;
+            }
+            50% {
+                color: #0077c0;
+            }
+            100% {
+                color: #87CEEB;
+            }
+        }
+
+        p {
+            color: #000;
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .button {
+            background-color: #87CEEB; /* Light blue button */
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            animation: buttonPulse 2s infinite;
+        }
+
+        @keyframes buttonPulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .button:hover {
+            background-color: #5F9EA0; /* Darker light blue on hover */
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h1><em>Welcome to SpendWise - Where Money Meets Magic!</em></h1>
+    <p>
+        At SpendWise, we believe managing your finances should be as enchanting as a magic show and as easy as a wave of a wand.
+    </p>
+    <p>Our mission is to help you make your money dance to your tune, and it all starts here.</p>
+    <p>Ready to join the financial adventure? Choose your path:</p>
+    <a th:href="@{api/account/login}" class="button">Unlock the Magic: Login</a>
+    <a th:href="@{api/account/createAccount}" class="button">Create Your Pot of Gold: Sign Up</a>
+    <p>Let's create some financial magic together!</p>
+    <p>Oh, and in case you're wondering, our budget tracking spells are top-notch!</p>
+    <!-- Updated the link to create an account -->
+</div>
+</body>
+</html>
